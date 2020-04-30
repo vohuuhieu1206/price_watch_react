@@ -1,0 +1,33 @@
+{
+  "name": "nodejs-sendmail",
+  "version": "1.0.0",
+  "description": "Send multi mail from JSON mail file",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js",
+    "start1": "babel-node src/index.js ",
+    "start": "nodemon src/index.js --exec babel-node ",
+    "build": "babel src -d distribution",
+    "serve": "node distribution/index.js",
+    "server": "nodemon --inspect server.js",
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\" "
+  },
+  "author": "vohuuhieu",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "babel-cli": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-2": "^6.24.1",
+    "body-parser": "^1.19.0",
+    "bootstrap": "^4.4.1",
+    "concurrently": "^5.1.0",
+    "cors": "^2.8.5",
+    "cron": "^1.8.2",
+    "express": "^4.17.1",
+    "nodemailer": "^6.4.6",
+    "nodemon": "^2.0.3",
+    "promise": "^8.1.0"
+  }
+}

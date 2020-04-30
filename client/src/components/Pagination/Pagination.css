@@ -1,0 +1,9 @@
+/* .pagination .page-item:first-of-type {
+    margin-left: auto;
+} */
+
+.pagination {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
