@@ -9,11 +9,9 @@ import {
     unFollowProduct
 } from '../../actions/products';
 import Img1 from '../../img/samsung1.jpg';
-import Chart from '../../img/spline-chart.png';
 import PriceChart from '../PriceChart/PriceChart';
 import ReviewsList from './ReviewsList';
 import ProductDes from './ProductDes';
-import Banner from '../Intro/Banner';
 
 class Product extends Component {
 
@@ -46,7 +44,6 @@ class Product extends Component {
         return !product ? <div></div>
             : (
                 <div>
-                    <Banner />
                     <section className="single_product clearfix">
                         <div className="container">
                             <div className="row">
