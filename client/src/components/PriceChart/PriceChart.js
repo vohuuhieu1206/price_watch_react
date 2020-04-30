@@ -4,7 +4,6 @@ import Chart from 'react-apexcharts';
 class PriceChart extends React.Component {
 	constructor(props) {
 	  super(props);
-  
 	  this.state = {
 		options: {
 		  chart: {
@@ -36,6 +35,8 @@ class PriceChart extends React.Component {
 			this.setState({
 				options: {
 					chart: {
+						type:'line',
+						width: '50%',
 					  id: 'apexchart-example'
 					},
 					xaxis: {
@@ -53,7 +54,9 @@ class PriceChart extends React.Component {
 	}
 	render() {
 	  return (
-		<Chart className="chart_comp" options={this.state.options} series={this.state.series} type="line" width={500} height={320} />
+		<div className="chart_comp">
+		<Chart options={this.state.options} series={this.state.series} type="line"/>
+		</div>
 	  )
 	}
   }

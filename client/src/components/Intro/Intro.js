@@ -59,25 +59,33 @@ class Intro extends Component {
                 </div>
               </div>
               <div className="row">
-                <div className="col-12 col-sm-6 col-lg-4">
+                <div className="col-12 col-sm-6 col-lg-3">
                   <div className="single-feature">
-                    <i className="fas fa-search" aria-hidden="true" />
+                    <div className="single-icon"><i className="fas fa-search" aria-hidden="true" /></div>
                     <h5>Tìm sản phẩm</h5>
-                    <p>Tìm kiếm theo tên, theo thương hiệu từ các nhà cung cấp.</p>
+                    <p>Giúp bạn tìm các sản phẩm có giá rẻ nhất trên một loạt các sản phẩm thương hiệu hàng đầu từ các cửa hàng hàng đầu.</p>
                   </div>
                 </div>
-                <div className="col-12 col-sm-6 col-lg-4">
+                <div className="col-12 col-sm-6 col-lg-3">
                   <div className="single-feature">
-                    <i className="fas fa-chart-bar" aria-hidden="true" />
+                    <div className="single-icon"><i class="fas fa-comments-dollar" aria-hidden="true" /></div>
+                    <h5>Xem đánh giá</h5>
+                    <p>Bạn có thể duyệt qua nhiều lựa chọn sản phẩm và đọc các đánh giá từ những người đã mua hàng để giúp bạn có cái nhìn khách quan.</p>
+                  </div>
+                </div>
+                <div className="col-12 col-sm-6 col-lg-3">
+                  <div className="single-feature">
+                    <div className="single-icon"><i className="fas fa-chart-bar" aria-hidden="true" /></div>
                     <h5>Xem lịch sử giá</h5>
-                    <p>Biểu đồ lịch sử thể hiện sự biến động giá qua các thời điểm.</p>
+                    <p>Biểu đồ lịch sử giá thể hiện sự biến động giá qua các thời điểm giúp bạn đưa ra quyết định vào thời điểm phù hợp.</p>
                   </div>
                 </div>
-                <div className="col-12 col-sm-6 col-lg-4">
+                
+                <div className="col-12 col-sm-6 col-lg-3">
                   <div className="single-feature">
-                    <i className="fas fa-thumbtack" aria-hidden="true" />
-                    <h5>Theo dõi giá</h5>
-                    <p>Thông báo đến người dùng ngay lập tức khi có sự thay đổi về giá .</p>
+                    <div className="single-icon"><i className="fas fa-bell" aria-hidden="true" /></div>
+                    <h5>Nhận thông báo</h5>
+                    <p>Email thông báo sẽ được gửi đến bạn mỗi khi có sự thay đổi về giá của các sản phẩm mà bạn đã theo dõi.</p>
                   </div>
                 </div>
               </div>

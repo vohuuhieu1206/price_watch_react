@@ -25,7 +25,7 @@ export default function reviewItem({ reviewData: {star, content, name_reviewer, 
                         data-placement="right"
                         title="Nhận xét của người đã đặt mua hàng thành công"
                     >
-                            <i className="fas fa-clock" /> Đã mua hàng: {new Date(crawlDate).toLocaleDateString()}
+                        {/* <i className="fas fa-clock" /> Đã mua hàng: {new Date(crawlDate).toLocaleDateString()} */}
                     </small>
                     <div className="voting">
                         <div className="star">
@@ -37,7 +37,7 @@ export default function reviewItem({ reviewData: {star, content, name_reviewer, 
                 </div>
             </div>
             <div className="comment_content col-12 col-sm-12 col-md-12 col-lg-12">
-                <div className="comment_title font-weight-bold text-danger">Đóng Gói Kỹ, Sản Phẩm Tốt</div>
+                {/* <div className="comment_title font-weight-bold text-danger">Đóng Gói Kỹ, Sản Phẩm Tốt</div> */}
                 <p className="cmt_text">{content}</p>
                 <div className="cmt_image_album row">
                     {/* <a href="img/1.jpg" className="col-6 col-sm-6 col-md-3 col-lg-2"><img src="img/1.jpg" alt="" /></a>
