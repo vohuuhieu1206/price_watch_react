@@ -2,23 +2,20 @@ import React from 'react';
 import Chart from 'react-apexcharts';
 
 class PriceChart extends React.Component {
+
 	constructor(props) {
-	  super(props);
-	  this.state = {
-		options: {
-		  chart: {
-			id: 'apexchart-example'
-		  },
-		  xaxis: {
-			categories: []
-		  }
-		},
-		series: [{
-		  name: 'Giá',
-		  data: []
-		}],
-		type: 'line'
-	  }
+	  	super(props);
+	  	this.state = {
+			options: {
+		 		chart: {},
+		  		xaxis: {}
+			},
+			series: [{
+		  		name: 'Giá',
+		  		data: []
+			}],
+			type: 'line'
+	  	}
 	}
 
 	componentDidMount() {
@@ -28,37 +25,37 @@ class PriceChart extends React.Component {
 		
 		if(this.props.productDetail) {
 			this.props.productDetail.prices.data.forEach(price => {
-				priceData.price.push(price.price)
+				priceData.price.push(price.price.replace(/\./g,''));
 				priceData.date.push(price.crawlDate);
 			})
-
+			
 			this.setState({
 				options: {
 					chart: {
 						type:'line',
 						width: '50%',
-					  id: 'apexchart-example'
 					},
 					xaxis: {
-					  categories: priceData.date
+						categories: priceData.date
 					}
-				  },
-				  series: [{
+				},
+				series: [{
 					name: 'Giá',
-					data: priceData.price
-				  }]
+					data:priceData.price
+				}]
 			})
 		}
 
-		console.log(priceData);
+		console.log(priceData.price);
 	}
-	render() {
-	  return (
-		<div className="chart_comp">
-		<Chart options={this.state.options} series={this.state.series} type="line"/>
-		</div>
-	  )
-	}
-  }
 
-  export default PriceChart;
+	render() {
+	  	return (
+			<div className="chart_comp">
+				<Chart options={this.state.options} series={this.state.series} type="line"/>
+			</div>
+	  	)
+	}
+}
+
+export default PriceChart;

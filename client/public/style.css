@@ -381,6 +381,11 @@ p {
 /* --------------------------
 :: 2.0 Header Area CSS
 -------------------------- */
+.dropdown-item {
+    text-align: center !important;
+    padding: 0 !important;
+}
+
 .dropdown-toggle::after {
     display:none !important;
 }
@@ -419,17 +424,19 @@ header_title {
 .notification .btn_format:hover > i {
     text-shadow: 2px 2px 4px #3F51B5;
     color: #ffc107 !important;
+    transition: .4s;
 }
 
 .notification .btn_format:hover > span {
     text-shadow: 2px 2px 4px #3F51B5;
     color: #ffc107 !important;
+    transition: .4s;
 }
 
 .brand_format{
     color: #fff;
     font-weight: 900;
-    font-size: 20px;
+    font-size: 30px;
 }
 a.brand_format:hover {
     color: #ffffff !important;
@@ -455,7 +462,7 @@ a.brand_format:hover {
 .navbar_header .search_box input{
     border-radius: 2px 0 0 2px !important;
     border: none;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .navbar_header .search_box button{
@@ -463,12 +470,12 @@ a.brand_format:hover {
     border: 1px solid #fff;
     color: #fff;
     font-weight: bold;
-    font-size: 14px;
-    transition: .3s;
+    font-size: 16px;
+    transition: .4s;
 }
 
 .navbar_header .search_box button:hover{
-    background-color: #fff;
+    background-color: #ff8800;
     color: #1f7ed0;
     border-left: 2px solid #ddd;
 }
@@ -901,7 +908,7 @@ a.brand_format:hover {
     background: #ff8800;
     height: 48px;
     min-width: 185px;
-    color: #ffffff;
+    color: #fff;
     font-weight: 500;
     border-radius: 22px 25px 22px 0;
 }
@@ -1047,22 +1054,24 @@ a.brand_format:hover {
 	justify-content: center;
 	align-items: center;
 	width: calc(100% + 15px);
-	height: 525px;
+    height: 80%;
+    width: 80%;
 	-webkit-transform: translateX(-15px);
 	-moz-transform: translateX(-15px);
 	-ms-transform: translateX(-15px);
 	-o-transform: translateX(-15px);
 	transform: translateX(-15px);
-	border: solid 1px #e8e8e8;
+	border: solid 1px #fff;
 	box-shadow: 0px 1px 5px rgba(0,0,0,0.1);
 	overflow: hidden;
-	padding: 15px;
+    padding: 15px;
+    margin: auto;
 }
-.image_selected img
+/* .image_selected img
 {
-    width: 100%;
-    height: 525px;  
-}
+    width: 80%;
+    height: 80%;  
+} */
 .product_description
 {
 	padding-left: 50px;
@@ -1099,7 +1108,8 @@ a.brand_format:hover {
 }
 .button_container
 {
-	margin-top: 40px;
+    margin-top: 40px;
+    float: right;
 }
 .product_button
 {
@@ -1121,6 +1131,7 @@ a.brand_format:hover {
 	background: linear-gradient(to right, #ff8800,#002fff);
       /* -webkit-animation: nebulahero 20s infinite linear; */
       outline: none !important;
+      float: right;
 }
 .product_button:hover{
 	transform: scale(1.1);
@@ -1130,11 +1141,12 @@ a.brand_format:hover {
 :: 9.0 Price History
 -------------------------- */
 .chart_comp {
+    padding: 3em;
     position: relative;
     background-color: #fff;
     z-index: 2;
-    width: 75%;
-    border-radius: 20px;
+    width: 65%;
+    border-radius: 4px;
     margin: 0 auto;
     -webkit-box-shadow: 0 10px 50px rgba(0, 0, 0, 0.08);
     box-shadow: 0 10px 50px rgba(0, 0, 0, 0.08);
@@ -1162,11 +1174,11 @@ a.brand_format:hover {
     z-index: 1;
     background-color: #002fff;
     padding: 100px 0;
-    top: -120px;
+    top: -150px;
 }
 .spline_chart_section:after {
     position: absolute;
-    bottom: -120px;
+    bottom: -150px;
     left: 0;
     right: 0;
     width: 100%;
@@ -1298,6 +1310,7 @@ a.brand_format:hover {
 }
 
 .btn_follow_shop{
+    float: right;
     width: 80%;
 	color: #fff;
 	font-size: 17px;
@@ -1340,7 +1353,7 @@ a.brand_format:hover {
 }
 
 .account_info{
-    background-color: #b6aebe;
+    background-color: #f5f9fc;
 }
 
 .bg1{background-color: #F39C12 !important;}

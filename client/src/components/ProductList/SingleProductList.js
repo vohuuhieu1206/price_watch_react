@@ -23,7 +23,9 @@ const SingleProductList = ({product: { image, title, link, identifier, crawlUpda
                     <button
                         type="button" className="button product_button"
                         onClick={() => window.open(link, "__blank")}
-                    >Đến cửa hàng</button>
+                    >
+                        Đến cửa hàng
+                    </button>
                     <p className="seller-by">Cập nhật {new Date(crawlUpdate).toLocaleString()}</p>
                 </div>
             </div>

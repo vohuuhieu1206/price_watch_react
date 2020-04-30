@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import FollowProduct from '../ProductList/ProductsFollow';
-import Banner from '../Intro/Banner';
 import Input from '../UI/Input/Input';
 
 class Account extends Component {
@@ -15,7 +14,6 @@ class Account extends Component {
         const { nameUser, emailUser } = this.props.auth;
         return (
             <div>
-                <Banner />
                 <section className="account_info section_padding_50 clearfix" id="about">
                     <div className="container">
                         <div className="row">

@@ -51,11 +51,11 @@ class Product extends Component {
                         <div className="container">
                             <div className="row">
                                 {/* Images */}
-                                <div className="col-lg-5 order-lg-2 order-1">
-                                    <div className="image_selected"><img src={Img1} alt="" /></div>
+                                <div className="image_selected col-lg-6">
+                                    <img src={Img1} alt="" />
                                 </div>
                                 {/* Description */}
-                                <div className="col-lg-5 order-3">
+                                <div className="col-lg-6">
                                     <ProductDes
                                         isFollowed={isFollowed}
                                         product={product}

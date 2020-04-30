@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
-import Banner from './Banner';
 
 class Intro extends Component {
     render() {
         return (
             <div>
-            <Banner />
             <section className="special-area section_padding_100 clearfix" id="about">
             <div className="container">
               <div className="row">

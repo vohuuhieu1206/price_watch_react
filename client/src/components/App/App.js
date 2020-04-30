@@ -10,6 +10,7 @@ import Account from '../Account/Account';
 import VerifyEmail from '../Account/VerifyEmail';
 import ScrollToTop from '../ScrollToTop/ScrollToTop';
 import PrivateRoute from './PrivateRoute';
+import Banner from '../Intro/Banner';
 
 
 class App extends Component {
@@ -18,6 +19,7 @@ class App extends Component {
             <div>
                 <Router>
                     <Header />
+                    <Banner />
                     <Switch>
                             <Route exact path="/" component={Intro} />
                             <Route exact path="/me/verify/:token" component={VerifyEmail} />
