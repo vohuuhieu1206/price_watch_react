@@ -54,24 +54,6 @@ class Account extends Component {
                                 </div>
                             </div>
                         </div>
-                        {/* <div class="col-sm-4">
-                        <div class="info-box bg1">
-                            <span class="info-box-icon"><i class="fa fa-user"></i></span>
-                            <div class="info-box-content">
-                                <span class="info-box-text-lg">User: Võ Hữu Hiếu</span>
-                                <span class="info-box-text">Email: vohuuhieu1206@gmail.com</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-4">
-                        <div class="info-box bg2">
-                            <span class="info-box-icon"><i class="fa fa-star"></i></span>
-                            <div class="info-box-content">
-                                <span class="info-box-text-lg">Số sản phẩm đang theo dõi</span>
-                                <span class="info-box-text">16</span>
-                            </div>
-                        </div>
-                    </div> */}
                     </div>
                 </section>
                 {/* ***** Account Area End ***** */}

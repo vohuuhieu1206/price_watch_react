@@ -12,7 +12,6 @@ import { getUserInfo, logout } from '../../actions/auth';
 
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import Button from 'react-bootstrap/Button';
 
 
 class Header extends Component {

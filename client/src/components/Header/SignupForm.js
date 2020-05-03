@@ -22,7 +22,7 @@ class SignupForm extends React.Component {
         let res = await this.props.postSignup(this.state);
         
         if(res) {
-            // handle after signup success
+            document.querySelector('.nav-link').click()
         }
     }
 

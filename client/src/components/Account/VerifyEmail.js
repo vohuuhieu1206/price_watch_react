@@ -14,7 +14,6 @@ class VerifyEmail extends React.Component {
             const response = await this.props.getVerifyEmail(token);
             if(response) {
                 alert("Xác thực thành công, vui lòng đăng nhập!");
-
             } else {
                 alert("Xác thực thất bại, vui lòng thử lại!")
             }
