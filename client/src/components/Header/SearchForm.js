@@ -38,7 +38,6 @@ class SerachForm extends React.Component {
                         placeholder="Tìm sản phẩm bạn muốn so sánh.." 
                         className="form-control col-6 col-sm-8 col-md-8 col-lg-8"
                         name="key"
-                        type="search"
                         ref={this.inputElement}
                     />
                     <Button className="btn col-4 col-sm-2 col-md-2 col-lg-2" variant="outline-primary" type="submit">Tìm kiếm</Button>

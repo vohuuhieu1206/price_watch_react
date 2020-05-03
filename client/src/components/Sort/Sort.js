@@ -1,20 +1,23 @@
 import React, { Component } from 'react';
 import Button from 'react-bootstrap/Button';
+import { withRouter } from 'react-router-dom';
 
 class Sort extends Component {
 
     constructor() {
         super();
-        this.state = {
-        }
-        this.inputElement = React.createRef();
+        this.queryName = ''
+    }
+
+    componentDidMount() {
+        this.queryName = this.props.location.search;
     }
 
     onSearchProductsPriceDes = () => {
-        this.props.history.push("/products?title=" + this.inputElement.current.value + "&sort_by_desc=price")
+        this.props.history.push("/products" + this.queryName + "&sort_by_desc=price");
     }
     onSearchProductsPriceAc = () => {
-        this.props.history.push("/products?title=" + this.inputElement.current.value + "&sort_by=price")
+        this.props.history.push("/products" + this.queryName + "&sort_by=price");
     }
 
     render() {
@@ -28,4 +31,4 @@ class Sort extends Component {
     }
 }
 
-export default Sort;
+export default withRouter(Sort);

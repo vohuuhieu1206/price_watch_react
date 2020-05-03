@@ -37,21 +37,45 @@ class Header extends Component {
                     <SearchForm />
                     <Navbar.Collapse id="" className = "col-lg-4 align-self-center notification">
                         <Nav>
-                            <Nav.Link href="#about" className="btn_format">
-                                <i className="fas fa-lightbulb icon_format"></i>
-                                <span className="align-self-center span_format">Ý tưởng</span>
-                            </Nav.Link>
-
-                            <Nav.Link href="#features" className="btn_format">
-                                <i className="fas fa-star icon_format"></i>
-                                <span className="align-self-center span_format">Chức năng</span>
-                            </Nav.Link>
-
-                            <Nav.Link href="#contact" className="btn_format">
-                                <i className="fas fa-star icon_format"></i>
-                                <span className="align-self-center span_format">Liên hệ</span>
-                            </Nav.Link>
-
+                            {
+                                this.props.location.pathname === "/" 
+                                ? 
+                                <Nav.Link href="#about" className="btn_format">
+                                    <i className="fas fa-lightbulb icon_format"></i>
+                                    <span className="align-self-center span_format">Ý tưởng</span>
+                                </Nav.Link>
+                                :
+                                <Nav.Link href="/#about" className="btn_format">
+                                    <i className="fas fa-lightbulb icon_format"></i>
+                                    <span className="align-self-center span_format">Ý tưởng</span>
+                                </Nav.Link>
+                            }
+                            {
+                                this.props.location.pathname === "/" 
+                                ? 
+                                <Nav.Link href="#features" className="btn_format">
+                                    <i className="fas fa-star icon_format"></i>
+                                    <span className="align-self-center span_format">Chức năng</span>
+                                </Nav.Link>
+                                :
+                                <Nav.Link href="/#features" className="btn_format">
+                                    <i className="fas fa-star icon_format"></i>
+                                    <span className="align-self-center span_format">Chức năng</span>
+                                </Nav.Link>
+                            }
+                            {
+                                this.props.location.pathname === "/" 
+                                ? 
+                                <Nav.Link href="#contact" className="btn_format">
+                                    <i class="fas fa-phone-square  icon_format"></i>
+                                    <span className="align-self-center span_format">Liên hệ</span>
+                                </Nav.Link>
+                                :
+                                <Nav.Link href="/#contact" className="btn_format">
+                                    <i class="fas fa-phone-square  icon_format"></i>
+                                    <span className="align-self-center span_format">Liên hệ</span>
+                                </Nav.Link>
+                            }                            
                             {
                                 auth ? <DropdownInfo handleLogout={this.handleLogout}/> : <ButtonAuth />
                             }

@@ -3,8 +3,11 @@ const path = require("path");
 const cors = require("cors");
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const cronjob = require("./cron");
+require('dotenv').config();
 
 const app = express();
+//cronjob.start();
 
 // Apply middleware
 app.use(express.static("client/build"));
@@ -16,8 +19,8 @@ app.post("/users/verify", (req, res) => {
     var transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            user: 'price.comparison.ctu@gmail.com',
-            pass: 'CTU@2020'
+            user: process.env.USER_EMAIL,
+            pass: process.env.PASS_EMAIL
         }
     });
 
@@ -25,7 +28,7 @@ app.post("/users/verify", (req, res) => {
         from: '"Price Comparison CTU" <price.comparison.ctu@noreply.com> ',
         to: req.body.email,
         subject: 'Verify your account',
-        html: `Verify link: http://localhost:3000/me/verify/${req.body.token} `
+        html: `Verify link: ${process.env.SERVER}/me/verify/${req.body.token} `
     };
     transporter.sendMail(mailOption, function (error, info) {
         if (error) {
