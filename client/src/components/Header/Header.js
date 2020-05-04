@@ -67,12 +67,12 @@ class Header extends Component {
                                 this.props.location.pathname === "/" 
                                 ? 
                                 <Nav.Link href="#contact" className="btn_format">
-                                    <i class="fas fa-phone-square  icon_format"></i>
+                                    <i className="fas fa-phone-square  icon_format"></i>
                                     <span className="align-self-center span_format">Liên hệ</span>
                                 </Nav.Link>
                                 :
                                 <Nav.Link href="/#contact" className="btn_format">
-                                    <i class="fas fa-phone-square  icon_format"></i>
+                                    <i className="fas fa-phone-square  icon_format"></i>
                                     <span className="align-self-center span_format">Liên hệ</span>
                                 </Nav.Link>
                             }                            

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { getProducts } from '../../actions/products';
 import SingleProductList from './SingleProductList';
 import Pagination from '../Pagination/Pagination';
@@ -84,7 +84,52 @@ class ProductList extends Component {
         
         if(!products.data) {
             return (
-                <div>Loading...</div>
+                <div>
+                    <section className="special-area section_padding_50 clearfix">
+                        <div className="container">
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-12 text-center align-self-center align-items-center">
+                            <SkeletonTheme color="#cecece" highlightColor="#bababa">
+                            <p><Skeleton height={50}/></p>
+                            </SkeletonTheme>
+                            </div>
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-12 text-center align-self-center align-items-center">
+                            <SkeletonTheme color="#cecece" highlightColor="#bababa">
+                            <p><Skeleton height={150} /></p>
+                            </SkeletonTheme>
+                            </div>
+                            <div className="line" />
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-12 text-center align-self-center align-items-center">
+                            <SkeletonTheme color="#cecece" highlightColor="#bababa">
+                            <p><Skeleton height={150} /></p>
+                            </SkeletonTheme>
+                            </div>
+                            <div className="line" />
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-12 text-center align-self-center align-items-center">
+                            <SkeletonTheme color="#cecece" highlightColor="#bababa">
+                            <p><Skeleton height={150} /></p>
+                            </SkeletonTheme>
+                            </div>
+                            <div className="line" />
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-12 text-center align-self-center align-items-center">
+                            <SkeletonTheme color="#cecece" highlightColor="#bababa">
+                            <p><Skeleton height={150} /></p>
+                            </SkeletonTheme>
+                            </div>
+                            <div className="line" />
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-12 text-center align-self-center align-items-center">
+                            <SkeletonTheme color="#cecece" highlightColor="#bababa">
+                            <p><Skeleton height={150} /></p>
+                            </SkeletonTheme>
+                            </div>
+                            <div className="line" />
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-12 text-center align-self-center align-items-center">
+                            <SkeletonTheme color="#cecece" highlightColor="#bababa">
+                            <p><Skeleton height={150} /></p>
+                            </SkeletonTheme>
+                            </div>
+                        </div>
+                    </section>
+                </div>
             )
         } else if(!products.data.length) {
             return <div>Khong co san phan nao</div>

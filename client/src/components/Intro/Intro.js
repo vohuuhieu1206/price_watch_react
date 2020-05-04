@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import NewslettersForm from './NewslettersForm';
 
 class Intro extends Component {
     render() {
@@ -66,7 +67,7 @@ class Intro extends Component {
                 </div>
                 <div className="col-12 col-sm-6 col-lg-3">
                   <div className="single-feature">
-                    <div className="single-icon"><i class="fas fa-comments-dollar" aria-hidden="true" /></div>
+                    <div className="single-icon"><i className="fas fa-comments-dollar" aria-hidden="true" /></div>
                     <h5>Xem đánh giá</h5>
                     <p>Bạn có thể duyệt qua nhiều lựa chọn sản phẩm và đọc các đánh giá từ những người đã mua hàng để giúp bạn có cái nhìn khách quan.</p>
                   </div>
@@ -90,47 +91,8 @@ class Intro extends Component {
             </div>
           </section>
 
-
-          <section className="footer-contact-area section_padding_100 clearfix" id="contact">
-            <div className="container">
-              <div className="row">
-                <div className="col-md-6">
-                  <div className="section-heading">
-                    <h2>Giữ liên lạc với chúng tôi</h2>
-                    <div className="line-shape" />
-                  </div>
-                  <div className="footer-text">
-                    <p>Bạn sẽ được nhận quảng cáo từ chúng tôi.</p>
-                  </div>
-                </div>
-                <div className="col-md-6">
-                  <div className="contact_from">
-                    <form action="#" method="post">
-                      <div className="contact_input_area">
-                        <div className="row">
-                          <div className="col-md-12">
-                            <div className="form-group">
-                              <input type="text" className="form-control" name="name" id="name" placeholder="Họ và tên" required />
-                            </div>
-                          </div>
-                          <div className="col-md-12">
-                            <div className="form-group">
-                              <input type="email" className="form-control" name="email" id="email" placeholder="E-mail" required />
-                            </div>
-                          </div>
-                          <div className="col-12">
-                            <button type="submit" className="btn submit-btn">Gửi</button>
-                          </div>
-                        </div>
-                      </div>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-            </div>
+          <NewslettersForm />
+          </div>
         );
     }
 }

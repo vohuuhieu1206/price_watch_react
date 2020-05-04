@@ -3,7 +3,7 @@ const path = require("path");
 const cors = require("cors");
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
-const cronjob = require("./cron");
+//const cronjob = require("./cron");
 require('dotenv').config();
 
 const app = express();

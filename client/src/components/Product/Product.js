@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
 import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
@@ -8,7 +9,6 @@ import {
     getFollowProducts,
     unFollowProduct
 } from '../../actions/products';
-import Img1 from '../../img/samsung1.jpg';
 import PriceChart from '../PriceChart/PriceChart';
 import ReviewsList from './ReviewsList';
 import ProductDes from './ProductDes';
@@ -41,17 +41,77 @@ class Product extends Component {
             })
         }
 
-        return !product ? <div></div>
+        return !product ? 
+                <div>
+                    <section className="single_product clearfix">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-lg-6">
+                                <SkeletonTheme color="#cecece" highlightColor="#bababa">
+                                <p><Skeleton height={550} width={550}/></p>
+                                </SkeletonTheme>
+                                </div>
+                                <div className="col-lg-6">
+                                <SkeletonTheme color="#cecece" highlightColor="#bababa">
+                                <p><Skeleton height={550} width={550}/></p>
+                                </SkeletonTheme>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section className="special-area section_padding_50 clearfix">
+                        <div className="container">
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-12 text-center align-self-center align-items-center">
+                            <SkeletonTheme color="#cecece" highlightColor="#bababa">
+                            <p><Skeleton height={50}/></p>
+                            </SkeletonTheme>
+                            </div>
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-12 text-center align-self-center align-items-center">
+                            <SkeletonTheme color="#cecece" highlightColor="#bababa">
+                            <p><Skeleton height={150} /></p>
+                            </SkeletonTheme>
+                            </div>
+                            <div className="line" />
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-12 text-center align-self-center align-items-center">
+                            <SkeletonTheme color="#cecece" highlightColor="#bababa">
+                            <p><Skeleton height={150} /></p>
+                            </SkeletonTheme>
+                            </div>
+                            <div className="line" />
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-12 text-center align-self-center align-items-center">
+                            <SkeletonTheme color="#cecece" highlightColor="#bababa">
+                            <p><Skeleton height={150} /></p>
+                            </SkeletonTheme>
+                            </div>
+                            <div className="line" />
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-12 text-center align-self-center align-items-center">
+                            <SkeletonTheme color="#cecece" highlightColor="#bababa">
+                            <p><Skeleton height={150} /></p>
+                            </SkeletonTheme>
+                            </div>
+                            <div className="line" />
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-12 text-center align-self-center align-items-center">
+                            <SkeletonTheme color="#cecece" highlightColor="#bababa">
+                            <p><Skeleton height={150} /></p>
+                            </SkeletonTheme>
+                            </div>
+                            <div className="line" />
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-12 text-center align-self-center align-items-center">
+                            <SkeletonTheme color="#cecece" highlightColor="#bababa">
+                            <p><Skeleton height={150} /></p>
+                            </SkeletonTheme>
+                            </div>
+                        </div>
+                    </section>
+                </div>
             : (
                 <div>
                     <section className="single_product clearfix">
                         <div className="container">
                             <div className="row">
-                                {/* Images */}
                                 <div className="image_selected col-lg-6">
-                                    <img src={Img1} alt="" />
+                                    <img src={product.detail.data.image} alt="" />
                                 </div>
-                                {/* Description */}
                                 <div className="col-lg-6">
                                     <ProductDes
                                         isFollowed={isFollowed}
@@ -63,16 +123,13 @@ class Product extends Component {
                             </div>
                         </div>
                     </section>
-                    {/* ***** Product Area End ***** */}
-                    {/* ***** Price Chart Area Start ***** */}
+
                     <section className="spline_chart col-lg-12">
                         <PriceChart className="chart_price" productDetail={product} />
                     </section>
                     <section className="spline_chart_section clearfix">
                     </section>
-                    {/* ***** Price Chart Area End ***** */}
-                    {/* ***** Evaluate Chart Area Start ***** */}
-                    {/* Nhận xét */}
+                    
                     <section className="evaluate section_padding_100 clearfix">
                         <div className="container" id="userrating">
                             <div className="header_eva">

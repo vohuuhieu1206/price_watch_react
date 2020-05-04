@@ -14,7 +14,7 @@ class PriceChart extends React.Component {
 		  		name: 'Giá',
 		  		data: []
 			}],
-			type: 'line'
+			type: ''
 	  	}
 	}
 
@@ -25,6 +25,7 @@ class PriceChart extends React.Component {
 		
 		if(this.props.productDetail) {
 			this.props.productDetail.prices.data.forEach(price => {
+				//priceData.price.push(Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(price.price));
 				priceData.price.push(price.price.replace(/\./g,''));
 				priceData.date.push(price.crawlDate);
 			})
@@ -33,10 +34,19 @@ class PriceChart extends React.Component {
 				options: {
 					chart: {
 						type:'line',
-						width: '50%',
+						width: '50%'
 					},
 					xaxis: {
 						categories: priceData.date
+					},
+					stroke: {
+						curve: 'smooth'						
+					},
+					markers: {
+						size: 5
+					},
+					fill: {
+						type: 'solid'
 					}
 				},
 				series: [{
@@ -52,7 +62,11 @@ class PriceChart extends React.Component {
 	render() {
 	  	return (
 			<div className="chart_comp">
-				<Chart options={this.state.options} series={this.state.series} type="line"/>
+				<Chart 
+					options={this.state.options} 
+					series={this.state.series} 
+					type="line"
+					/>
 			</div>
 	  	)
 	}

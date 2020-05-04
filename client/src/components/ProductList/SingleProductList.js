@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-
 import ImgBrand from '../../img/tgdd.jpg';
 
 const SingleProductList = ({product: { image, title, link, identifier, crawlUpdate, provider, price  }}) => {

@@ -34,20 +34,31 @@ class ProductList extends Component {
     render() {
         const { products } = this.props;
         console.log(products)
-        return products.length === 0 ? <div>Bạn chưa theo dõi sản phẩm.</div>
-        : (
-            <div>
-                <section className="special-area section_padding_50 clearfix" id="about">
-                    <div className="container">
-                        <div className="row">
-                            {
-                                products.map(pro => this.renderProduct(pro))
-                            }
+        return products.length === 0 
+            ? 
+                <div>
+                    <section className="special-area section_padding_50 clearfix">
+                        <div className="container">
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-12 text-center align-self-center align-items-center">
+                            <h4>Bạn chưa theo dõi sản phẩm nào. Hãy theo dõi thêm các sản phẩm!</h4>
+                            </div>
                         </div>
-                    </div>
-                    {/* <Pagination pagination={products} /> */}
-                </section>
-            </div>
+                    </section>
+                </div>
+            : 
+            (
+                <div>
+                    <section className="special-area section_padding_50 clearfix" id="about">
+                        <div className="container">
+                            <div className="row">
+                                {
+                                    products.map(pro => this.renderProduct(pro))
+                                }
+                            </div>
+                        </div>
+                        {/* <Pagination pagination={products} /> */}
+                    </section>
+                </div>
         );
     }
 }
