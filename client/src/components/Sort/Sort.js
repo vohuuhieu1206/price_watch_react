@@ -9,8 +9,18 @@ class Sort extends Component {
         this.queryName = ''
     }
 
-    componentDidMount() {
-        this.queryName = this.props.location.search;
+    componentDidUpdate(nextProps) {
+        this.queryName = nextProps.location.search;
+        if( this.queryName === "") {
+            this.queryName = '?title=';
+        }
+    }
+
+    onSearchProductsPriceDes = () => {
+        this.props.history.push("/products" + this.queryName + "&sort_by_desc=price");
+    }
+    onSearchProductsPriceAc = () => {
+        this.props.history.push("/products" + this.queryName + "&sort_by=price");
     }
 
     onSearchProductsPriceDes = () => {
