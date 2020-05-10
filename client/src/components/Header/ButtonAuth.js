@@ -8,7 +8,7 @@ const ButtonAuth = props => {
             data-toggle="modal"
             data-target="#pop_login"
             data-placement="bottom"
-            className = "btn_format"
+            className = "btn_format drop_mb_info"
         >
             <i className="fas fa-user-alt icon_format"></i>
             <span 
