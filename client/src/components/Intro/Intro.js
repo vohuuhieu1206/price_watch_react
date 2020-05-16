@@ -1,10 +1,14 @@
 import React, { Component } from 'react';
 import NewslettersForm from './NewslettersForm';
+import BrandProduct from '../BrandProduct/BrandProduct';
+import BrandProvider from '../BrandProvider/BrandProvider';
 
 class Intro extends Component {
     render() {
         return (
             <div>
+            <BrandProduct />
+
             <section className="special-area section_padding_100 clearfix" id="about">
             <div className="container">
               <div className="row">
@@ -46,7 +50,7 @@ class Intro extends Component {
               </div>
             </div>
           </section>
-
+          
           <section className="awesome-feature-area bg-white section_padding_100 clearfix" id="features">
             <div className="container">
               <div className="row">
@@ -90,7 +94,7 @@ class Intro extends Component {
               </div>
             </div>
           </section>
-
+          <BrandProvider />
           <NewslettersForm />
           </div>
         );

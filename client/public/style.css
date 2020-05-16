@@ -14,6 +14,53 @@
 :: 12.0 Account
 -------------------------- */
 
+/* --------------------------
+:: Brand Product
+-------------------------- */
+.danhmucnoibat {
+    padding: 2em 0;
+    background-color: #fff;
+    margin-top: 1em;
+}
+.imagedanhmuc {
+    overflow: hidden;
+}
+.imagedanhmuc img {
+    max-width: 100%;
+    transition: transform 0.3s;
+    background-color: #f4f4f4;
+}
+.imagedanhmuc:hover img{
+    box-shadow: 7px 7px 20px 7px rgba(156, 39, 176, 0.57);
+    transform: scale(1.2);
+}
+
+/* --------------------------
+:: Brand Provider
+-------------------------- */
+.danhmucncc {
+    padding: 2em 0;
+    background: #f5f9fc;
+}
+.danhmucnccitem{
+    padding-top: 2em;
+}
+.danhmucnccicon{
+    margin-bottom: 25px;
+    align-content: center;
+    
+}
+.imagedanhmucncc {
+
+    overflow: hidden;
+}
+.imagedanhmucncc img {
+    width: 160px;
+    height: 80px;
+    transition: transform 0.3s;
+    background-color: #fff;
+}
+
 @import 'lib/bootstrap/bootstrap.min.css';
 @import 'css/animate.css';
 @import 'css/ionicons.min.css';
@@ -25,6 +72,10 @@ a:hover {
 input:focus, textarea:focus, select:focus{
     outline: none !important;
 }
+.btn:focus,.btn:active {
+    outline: none !important;
+    box-shadow: none !important;
+ }
 
 /* --------------------------
 :: 0.0 Login Popup CSS Start
@@ -602,9 +653,8 @@ a.brand_format:hover {
 
 .wellcome_area {
     background-image: url(img/welcome-bg.png);
-    height: 500px;
     position: relative;
-     z-index: 1; 
+    z-index: 1; 
     /* background-position: bottom center;
     background-size: cover; */
 }
@@ -925,7 +975,7 @@ a.brand_format:hover {
 :: 7.0 Footer Area CSS Start
 -------------------------- */
 .footer-contact-area {
-    background: #f5f9fc;
+    background: #fff;
 }
 
 .footer-text > p {
@@ -1054,8 +1104,8 @@ a.brand_format:hover {
 	justify-content: center;
 	align-items: center;
 	width: calc(100% + 15px);
-    height: 80%;
-    width: 80%;
+    height: 500px;
+    width: 500px;
 	-webkit-transform: translateX(-15px);
 	-moz-transform: translateX(-15px);
 	-ms-transform: translateX(-15px);
@@ -1067,11 +1117,11 @@ a.brand_format:hover {
     padding: 15px;
     margin: auto;
 }
-/* .image_selected img
+.image_selected img
 {
-    width: 80%;
-    height: 80%;  
-} */
+    width: 500px;
+    height: 500px;  
+}
 .product_description
 {
 	padding-left: 50px;
@@ -1101,19 +1151,16 @@ a.brand_format:hover {
 }
 .product_price
 {
-	display: inline-block;
-	font-size: 22px;
-	font-weight: 400;
-	clear: left;
+	font-size: 40px;
+    font-weight: 600;
 }
 .button_container
 {
-    margin-top: 40px;
     float: right;
 }
 .product_button
 {
-	display: inline-block;
+    display: inline-block;
 	color: #FFFFFF;
 	padding-left: 35px;
     padding-right: 35px;
@@ -1129,12 +1176,18 @@ a.brand_format:hover {
 	box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.56);
 	transition: .3s;
 	background: linear-gradient(to right, #ff8800,#002fff);
-      /* -webkit-animation: nebulahero 20s infinite linear; */
-      outline: none !important;
-      float: right;
+    outline: none !important;
 }
 .product_button:hover{
 	transform: scale(1.1);
+}
+.img_logo_des{
+    float: left;
+}
+.img_logo_des img{
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
 }
 
 /* --------------------------

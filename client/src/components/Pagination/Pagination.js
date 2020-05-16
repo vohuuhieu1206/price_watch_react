@@ -69,11 +69,11 @@ class Paginagtion extends React.Component {
         return (
             <>
                 <li className={`page-item ${activePrev}`}>
-                    <Link className="page-link" to={linkPrev}>Previous</Link>
+                    <Link className="page-link" to={linkPrev}>Trước</Link>
                 </li>
                 {pageNumbers}
                 <li className={`page-item ${activeNext}`}>
-                    <Link className="page-link" to={linkNext}>Next</Link>
+                    <Link className="page-link" to={linkNext}>Sau</Link>
                 </li>
             </>
         )

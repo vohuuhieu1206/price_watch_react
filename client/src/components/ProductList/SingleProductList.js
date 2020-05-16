@@ -1,8 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import ImgBrand from '../../img/tgdd.jpg';
 
-const SingleProductList = ({product: { image, title, link, identifier, crawlUpdate, provider, price  }}) => {
+import moment from 'moment';
+import 'moment/locale/vi';
+
+import { Link } from 'react-router-dom';
+
+const SingleProductList = ({product: { image, title, link, identifier, crawlUpdate, provider, linkLogo, strPrice  }}) => {
     
     return (
         <div key={identifier}>
@@ -15,17 +18,20 @@ const SingleProductList = ({product: { image, title, link, identifier, crawlUpda
                     <p className="seller-by">{provider}</p>
                 </div>
                 <div className="col-lg-2">
-                    <p className="price">{price} VNĐ</p>
+                    <p className="price">{strPrice} VNĐ</p>
                 </div>
-                <div className="col-lg-1"><img className="img_logo" src={ImgBrand} alt="st" /></div>
-                <div className="col-lg-3">
+                <div className="col-lg-1"><img className="img_logo" src={linkLogo} alt="st" /></div>
+                <div className="col-lg-3 openlink">
                     <button
                         type="button" className="button product_button"
                         onClick={() => window.open(link, "__blank")}
                     >
                         Đến cửa hàng
                     </button>
-                    <p className="seller-by">Cập nhật {new Date(crawlUpdate).toLocaleString()}</p>
+                    <div className="moment_crawl">
+                        {/* <p className="seller-by">{new Date(crawlUpdate).toLocaleString()}</p> */}
+                        <p className="seller-by">Cập nhật {moment(crawlUpdate).fromNow()}</p>
+                    </div>
                 </div>
             </div>
             <div className="line" />

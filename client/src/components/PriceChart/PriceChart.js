@@ -27,6 +27,7 @@ class PriceChart extends React.Component {
 			this.props.productDetail.prices.data.forEach(price => {
 				//priceData.price.push(Intl.NumberFormat('de-DE', { style: 'currency', currency: 'EUR' }).format(price.price));
 				priceData.price.push(price.price.replace(/\./g,''));
+				//priceData.price.push(price.price);
 				priceData.date.push(price.crawlDate);
 			})
 			

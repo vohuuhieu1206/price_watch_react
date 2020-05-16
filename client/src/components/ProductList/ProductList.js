@@ -5,6 +5,7 @@ import { getProducts } from '../../actions/products';
 import SingleProductList from './SingleProductList';
 import Pagination from '../Pagination/Pagination';
 import Sort from '../Sort/Sort';
+import BrandProvider from '../BrandProvider/BrandProvider';
 
 
 class ProductList extends Component {
@@ -92,11 +93,6 @@ class ProductList extends Component {
                             <p><Skeleton height={50}/></p>
                             </SkeletonTheme>
                             </div>
-                            <div className="col-12 col-sm-12 col-md-6 col-lg-12 text-center align-self-center align-items-center">
-                            <SkeletonTheme color="#cecece" highlightColor="#bababa">
-                            <p><Skeleton height={150} /></p>
-                            </SkeletonTheme>
-                            </div>
                             <div className="line" />
                             <div className="col-12 col-sm-12 col-md-6 col-lg-12 text-center align-self-center align-items-center">
                             <SkeletonTheme color="#cecece" highlightColor="#bababa">
@@ -125,6 +121,18 @@ class ProductList extends Component {
                             <div className="col-12 col-sm-12 col-md-6 col-lg-12 text-center align-self-center align-items-center">
                             <SkeletonTheme color="#cecece" highlightColor="#bababa">
                             <p><Skeleton height={150} /></p>
+                            </SkeletonTheme>
+                            </div>
+                            <div className="line" />
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-12 text-center align-self-center align-items-center">
+                            <SkeletonTheme color="#cecece" highlightColor="#bababa">
+                            <p><Skeleton height={150} /></p>
+                            </SkeletonTheme>
+                            </div>
+                            <div className="line" />
+                            <div className="col-12 col-sm-12 col-md-6 col-lg-12 text-center align-self-center align-items-center">
+                            <SkeletonTheme color="#cecece" highlightColor="#bababa">
+                            <p><Skeleton height={50}/></p>
                             </SkeletonTheme>
                             </div>
                         </div>
@@ -140,6 +148,8 @@ class ProductList extends Component {
                         <div className="container">
                             <div className="row">
                                 <Sort />
+                                <BrandProvider />
+                                <div className="line" />
                                 {
                                     products.data.map(pro => this.renderProduct(pro))
                                 }

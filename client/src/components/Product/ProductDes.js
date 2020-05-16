@@ -1,12 +1,11 @@
 import React from 'react';
 
 const ProductDes = props => {
-    const { link, identifier, title } = props.product.detail.data;
+    const { link, identifier, title, linkLogo } = props.product.detail.data;
     const { specification } = props.product;
     const { price } = props.product.realprice.data;
     return (
         <div className="product_description">
-            <div className="product_category">Smartphones</div>
             <div className="product_name">Điện thoại {specification.data.brand} {title}</div>
             <div className="overview">
                 <p>Mô tả sơ lược:</p>
@@ -22,24 +21,27 @@ const ProductDes = props => {
             </div>
             <div className="order_info flex-row">
                 <div className="product_price">{price} VNĐ</div>
-                <div className="button_container">
-                    <button
-                        type="button" className="product_button"
-                        onClick={() => window.open(link)}
-                    >Đến nơi bán</button>
-
-                    {
-                        !props.isFollowed ? <input
-                            type="button" className="btn_follow_shop" defaultValue="Follow"
-                            onClick={() => props.followProduct(identifier)}
-                        />
-                        :
-                        <input
-                            type="button" className="btn_follow_shop" defaultValue="UnFollow"
-                            onClick={() => props.unFollowProduct(identifier)}
-                        />
-                    }
-                    
+                <div className="">
+                    <div className="img_logo_des">
+                    <img src={linkLogo} alt="Logo nhà cung cấp" />
+                    </div>
+                    <div className="button_container">
+                        <button
+                            type="button" className="product_button"
+                            onClick={() => window.open(link)}
+                        >Đến nơi bán</button>
+                        {
+                            !props.isFollowed ? <input
+                                type="button" className="btn_follow_shop" defaultValue="Follow"
+                                onClick={() => props.followProduct(identifier)}
+                            />
+                            :
+                            <input
+                                type="button" className="btn_follow_shop" defaultValue="UnFollow"
+                                onClick={() => props.unFollowProduct(identifier)}
+                            />
+                        }
+                    </div>
                 </div>
             </div>
         </div>
