@@ -30,17 +30,17 @@ class SerachForm extends React.Component {
         return (
             <>
                 <Form inline
-                    className = "col-lg-6 row form-inline align-self-center search_box"
+                    className = "col-sm-6 row form-inline align-self-center search_box"
                     onSubmit={(event) => this.onSearchProducts(event)}
                 >
                     <FormControl 
                         type="text" 
                         placeholder="Tìm sản phẩm bạn muốn so sánh.." 
-                        className="form-control col-6 col-sm-8 col-md-8 col-lg-8"
+                        className="col-md-10 form-control"
                         name="key"
                         ref={this.inputElement}
                     />
-                    <Button className="btn col-4 col-sm-2 col-md-2 col-lg-2" variant="outline-primary" type="submit">Tìm kiếm</Button>
+                    <Button className="col-md-2 btn" variant="outline-primary" type="submit">Tìm kiếm</Button>
                 </Form>
             </>  
         )

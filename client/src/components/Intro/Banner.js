@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+// Responsive
+import {Container, Row, Col} from "react-bootstrap";
 class Banner extends Component {
     render() {
         return (
@@ -16,6 +18,7 @@ class Banner extends Component {
                         </div>
                     </div>
                 </div>
+                
             </section>
             </div>
         );

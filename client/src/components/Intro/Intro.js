@@ -12,7 +12,7 @@ class Intro extends Component {
             <section className="special-area section_padding_100 clearfix" id="about">
             <div className="container">
               <div className="row">
-                <div className="col-12">
+                <div className="col-xs-12">
                   <div className="section-heading text-center">
                     <h2>Ý tưởng Single Page Application</h2>
                     <div className="line-shape" />
