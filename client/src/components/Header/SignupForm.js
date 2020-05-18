@@ -14,7 +14,7 @@ class SignupForm extends React.Component {
     }
 
     changeHandler = (event, type) => {
-        this.setState({ [type]: event.target.value })
+        this.setState({ [type]: event.target.value }) //'nameUser'
     }
 
     submitHandler = async (e) => {

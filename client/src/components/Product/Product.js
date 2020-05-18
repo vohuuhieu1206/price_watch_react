@@ -11,12 +11,12 @@ import {
 } from '../../actions/products';
 import PriceChart from '../PriceChart/PriceChart';
 import ReviewsList from './ReviewsList';
-import ProductDes from './ProductDes';
+import ProductDetail from '../ProductDetail/ProductDetail';
 
 class Product extends Component {
 
     componentDidMount() {
-        const { pid } = this.props.match.params;
+        const { pid } = this.props.match.params; //destructuring
         this.props.getSingleProduct(pid);
         this.props.getFollowProducts();
     }
@@ -113,7 +113,7 @@ class Product extends Component {
                                     <img src={product.detail.data.image} alt="" />
                                 </div>
                                 <div className="col-lg-6">
-                                    <ProductDes
+                                    <ProductDetail
                                         isFollowed={isFollowed}
                                         product={product}
                                         followProduct={this.followProduct}

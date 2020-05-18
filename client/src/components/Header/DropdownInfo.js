@@ -11,7 +11,7 @@ const DropdownInfo = props => {
                 <Dropdown.Toggle variant="" id="dropdown">
                     <div className = "btn_format">                    
                         <i className="fas fa-user-alt icon_format"></i>
-                        <span className="align-self-center span_format">User Name</span>
+                        <span className="align-self-center span_format">{props.name}</span>
                     </div>
                 </Dropdown.Toggle>
                 <Dropdown.Menu className="drop_mb_info_menu">

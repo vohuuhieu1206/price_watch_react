@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import NewslettersForm from './NewslettersForm';
 import BrandProduct from '../BrandProduct/BrandProduct';
-import BrandProvider from '../BrandProvider/BrandProvider';
+import ProviderList from '../ProviderList/ProviderList';
 
 class Intro extends Component {
     render() {
@@ -94,7 +94,7 @@ class Intro extends Component {
               </div>
             </div>
           </section>
-          <BrandProvider />
+          <ProviderList />
           <NewslettersForm />
           </div>
         );

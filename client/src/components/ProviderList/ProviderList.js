@@ -8,11 +8,11 @@ import ViettelStore from '../../img/viettelstore.png';
 import Cellphones from '../../img/cellphones.png';
 import Cholon from '../../img/cholon.png';
 
-class BrandProvider extends Component {
+class ProviderList extends Component {
 
     onBrandProvider = (provider_name) => {
         console.log(this.props);
-        this.props.setProvider(provider_name);
+        this.props.history.push("/products?provider=" + provider_name);
     }
 
     render() {
@@ -57,4 +57,4 @@ class BrandProvider extends Component {
     }
 }
 
-export default withRouter(BrandProvider);
+export default withRouter(ProviderList);

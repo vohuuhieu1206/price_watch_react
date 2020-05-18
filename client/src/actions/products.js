@@ -8,10 +8,12 @@ export const getProducts = queryObj => async dispatch => {
         let title = queryObj.title;
         let sortBy = queryObj.sort_by;
         let sortByDesc = queryObj.sort_by_desc;
+        let provider = queryObj.provider;
+        if(provider) provider = `&provider=${provider}`;
         if(title) title = `&title=${title}`;
         if(sortBy) sortBy = `&sort_by=${sortBy}`;
         if(sortByDesc) sortByDesc = `&sort_by_desc=${sortByDesc}`;
-        const response  = await axios.get(`/products?page=${page}${title}${sortBy}${sortByDesc}`);
+        const response  = await axios.get(`/products?page=${page}${title}${sortBy}${sortByDesc}${provider}`);
 
         dispatch({
             type: types.GET_PRODUCTS,
@@ -29,7 +31,7 @@ export const getSingleProduct = pid => async dispatch => {
             axios.get(`/products/${pid}/prices`),
             axios.get(`/products/${pid}/provider`),
             axios.get(`/products/${pid}/specification`),
-            axios.get(`/products/${pid}/realprice`)
+            axios.get(`/products/${pid}/realprice`) //tất cả có result mới trả về
         ]);
 
         const productData = {

@@ -13,12 +13,14 @@ class ProductList extends Component {
         queryObj: {
             page: 0,
             title: ""
-        }
+        },
+        loadingState: true
     }
 
     async componentDidMount() {
         await this.getQuery();
-        this.props.getProducts(this.state.queryObj);
+        await this.props.getProducts(this.state.queryObj);
+        this.setState({loadingState: false});
     }
 
     getQuery = async () => {
@@ -27,7 +29,8 @@ class ProductList extends Component {
             page: 0,
             filter: "",
             sort_by: "",
-            sort_by_desc: ""
+            sort_by_desc: "",
+            provider: ""
         }
 
         if (rawQuery) {
@@ -43,6 +46,16 @@ class ProductList extends Component {
         this.setState(() => {
             return { queryObj: queryObj }
         });
+    }
+
+    setProvider = (provider_name) => {
+        this.setState({loadingState: true});
+        let newQuery = { ...this.state.queryObj, provider: provider_name };
+        this.setState({ queryObj: newQuery }, async () => {
+            console.log(this.state.queryObj)
+            await this.props.getProducts(this.state.queryObj);
+            this.setState({loadingState: false});
+        })
     }
 
     async UNSAFE_componentWillReceiveProps(nextProps) {
@@ -81,9 +94,10 @@ class ProductList extends Component {
 
     render() {
         const { products } = this.props;
+
         console.log(products);
         
-        if(!products.data) {
+        if(this.state.loadingState) {
             return (
                 <div>
                     <section className="special-area section_padding_50 clearfix">
@@ -139,16 +153,16 @@ class ProductList extends Component {
                     </section>
                 </div>
             )
-        } else if(!products.data.length) {
+        } else if(products.data && !products.data.length ) {
             return <div>Khong co san phan nao</div>
-        } else {
+        } else if(products.data && products.data.length) {
             return (
                 <div>
                     <section className="special-area section_padding_50 clearfix" id="about">
                         <div className="container">
                             <div className="row">
                                 <Sort />
-                                <BrandProvider />
+                                <BrandProvider setProvider={this.setProvider}/>
                                 <div className="line" />
                                 {
                                     products.data.map(pro => this.renderProduct(pro))
@@ -159,6 +173,9 @@ class ProductList extends Component {
                     </section>
                 </div>
             )
+        } 
+        else{
+            return "Something ..."
         }
     }
 }

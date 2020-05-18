@@ -1172,12 +1172,11 @@ a.brand_format:hover {
 }
 .product_button
 {
-    display: inline-block;
+    float: right;
 	color: #FFFFFF;
 	padding-left: 35px;
     padding-right: 35px;
     width: 80%;
-    cursor: pointer;
 	font-size: 17px;
 	text-transform: uppercase;
 	border: 1px solid #fff;

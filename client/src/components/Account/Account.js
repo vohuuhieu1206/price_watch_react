@@ -2,16 +2,28 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import FollowProduct from '../ProductList/ProductsFollow';
 import Input from '../UI/Input/Input';
+import { rename } from '../../actions/auth';
 
 class Account extends Component {
+    constructor() {
+        super();
+        this.state = {
+            nameUser: ''
+        }
+    }
+    rename = () => {
+        const token = window.localStorage.getItem('compare_price_jwt');
+        this.props.rename(token, this.state.nameUser);
+    }
     render() {
-        console.log(this.props.auth)
+        console.log("render")
 
         if (!this.props.auth) {
             return <div>Loading...</div>
         }
 
         const { nameUser, emailUser } = this.props.auth;
+
         return (
             <div>
                 <section className="account_info section_padding_50 clearfix" id="about">
@@ -44,8 +56,13 @@ class Account extends Component {
                                     <div className="inner">
                                         <h4>Sửa tên của bạn</h4>
                                         <div className = "inner_input">
-                                            <Input></Input>
-                                            <i class="far fa-check-circle"></i>
+                                            <Input
+                                                onChanged={(event) => this.setState({ nameUser: event.target.value})}
+                                            />
+                                            <i
+                                                style={{cursor: "pointer"}} class="far fa-check-circle"
+                                                onClick={this.rename}
+                                            ></i>
                                         </div>
                                     </div>
                                     <div className="icon">
@@ -70,5 +87,6 @@ const mapStateToProps = state => {
 }
 
 export default connect(
-    mapStateToProps
+    mapStateToProps,
+    { rename }
 )(Account);

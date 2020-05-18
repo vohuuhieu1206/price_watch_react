@@ -8,6 +8,8 @@ export default (state = INIT_STATE, action) => {
             return action.payload;
         case types.AUTH_LOGOUT:
             return null
+        case types.RENAME:
+            return {...state, nameUser: action.payload}
         default: 
             return state
     }

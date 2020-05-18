@@ -83,7 +83,7 @@ class Header extends Component {
                                         </Nav.Link>
                                     }                            
                                     {
-                                        auth ? <DropdownInfo handleLogout={this.handleLogout}/> : <ButtonAuth />
+                                        auth ? <DropdownInfo handleLogout={this.handleLogout} name={auth.nameUser}/> : <ButtonAuth />
                                     }
                                 </Nav>
                             </Navbar.Collapse>

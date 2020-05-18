@@ -10,11 +10,13 @@ class Paginagtion extends React.Component {
         let titleFilter = "";
         let sortBy = "";
         let sortByDesc = "";
+        let provider = "";
         let queryObj = {
             page: 0,
             title: "",
             sort_by: "",
-            sort_by_desc: ""
+            sort_by_desc: "",
+            provider: ""
         }
 
         if (rawQuery) {
@@ -48,10 +50,11 @@ class Paginagtion extends React.Component {
         if(queryObj.title) titleFilter = "&title=" + queryObj.title;
         if(queryObj.sort_by) sortBy = `&sort_by=${queryObj.sort_by}`;
         if(queryObj.sort_by_desc) sortByDesc = `&sort_by_desc=${queryObj.sort_by_desc}`;
+        if(queryObj.provider) provider = `&provider=${queryObj.provider}`;
         for(let i = start; i <= end; i++) {
             pageNumbers.push(
                 <li key={i} className={`page-item ${current_page === i ? "active" : ""}`}>
-                    <Link className="page-link" to={`?page=${i}${titleFilter}${sortBy}${sortByDesc}`}>{i}</Link>
+                    <Link className="page-link" to={`?page=${i}${titleFilter}${sortBy}${sortByDesc}${provider}`}>{i}</Link>
                 </li>
             )
         }

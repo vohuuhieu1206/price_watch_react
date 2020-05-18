@@ -86,3 +86,18 @@ export const logout = token => async dispatch => {
         console.log(err)
     }
 }
+
+export const rename = (token, nameUser) => async dispatch => {
+
+    try {
+        const response = await axios.put(`/me`, {nameUser: nameUser},  { headers: {"Authorization" : `Bearer ${token}`} } );
+        if(response) {
+            dispatch({
+                type: types.RENAME,
+                payload: response.data.data.nameUser
+            })
+        }
+    } catch (err) {
+        console.log(err)
+    }
+}
